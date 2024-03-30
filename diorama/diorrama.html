@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diorama</title>
+    <style>
+        body{
+            background-color: #040204;
+            overflow: hidden;
+        }
+        .tocisa{
+            background-color:#040204;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            margin-left:650px ;
+            margin-top: 200px;
+            animation: tocit   forwards linear 10s   ;
+            animation-iteration-count: infinite;
+            border:  1px solid white;
+            border-radius: 50%;
+           
+        }
+        .kolecko{
+            background-color: #040204;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: -228px;
+            margin-left: -228px;
+           
+            }
+        .kolecko2{
+            background-color: #040204;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 428px;
+            margin-top: 428px;
+        }
+        @keyframes tocit{
+            0% { transform: rotate(0deg); }
+            100% {transform: rotate(360deg);}
+        }
+     
+        #baf{
+            position:absolute;
+            rotate: 90deg;
+            margin-top: 200px;
+            margin-left: -600px ;
+            animation: leva 10s  infinite ;
+        }
+        @keyframes leva{
+            10%{margin-left: -200px;}
+        }
+        #baf2{
+            rotate: -90deg;
+            margin-top: 200px;
+            margin-left: 2000px ;
+            animation: prava 10s  infinite ;
+            position:absolute;
+        }
+        @keyframes prava{
+            10%{margin-left: 1500px;}
+            }
+        #oko1{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+
+        }
+        #hodiny{
+            position: absolute;
+            font-size: 100px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: red; 
+            position: absolute;
+           margin-left: 700px;
+           margin-top: 400px;
+            font-weight: bold;
+        }
+        #ksicht{
+            position:absolute;
+            margin-left: 800px;
+            animation: up  forwards linear 5s ,zz forwards linear infinite 0.5s;  ;
+            animation-iteration-count: infinite;
+            z-index: -5;
+            
+        }
+        @keyframes up{
+            
+            10%{margin-top: 300px;}
+            20%{rotate: 10deg;}
+            40%{rotate: -10deg;}
+            
+        }
+        @keyframes zz{
+            20%{rotate: 10deg;}
+            40%{rotate: -10deg;}
+            
+        }
+    </style>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('hodiny').textContent = timeString;
+        }
+
+        
+        setInterval(updateClock, 1000);
+
+        updateClock();
+    </script>
+      
+</head>
+<body>
+    <div class="tocisa"><div class="kolecko"><img id="oko1" src="eye-scary.png" alt="bubub"></div><div class="kolecko2"><img id="oko1" src="eye-scary.png" alt="bubub"></div></div>
+    
+    <img id="baf" src="fesak.jpg" alt="bubub">
+    <img id="baf2" src="fesak.jpg" alt="bubub">
+    <div id="hodiny"></div>
+    
+    <img id ="ksicht" src="Ksicht.png" alt="">
+    
+    
+</body>
+</html>
